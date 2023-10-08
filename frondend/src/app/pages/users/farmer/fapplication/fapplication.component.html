@@ -1,0 +1,97 @@
+<div class="fill">
+    <div class="form_container">
+        <div class="register_form">
+            <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                <h2>Application Form</h2>
+                <div class="input_box">
+                    <input type="text" class="form-control" [value]="username" disabled="true" required>
+                </div>
+                <div class="input_row">
+                    <div class="input_box">
+                        <input type="text" class="form-control" [value]="address" disabled="true" required>
+                    </div>
+                    <div class="input_box">
+                        <input type="text" class="form-control" [value]="place" disabled="true" required>
+                    </div>
+                </div>
+                <div class="input_row">
+                    <div class="input_box">
+                        <input type="text" class="form-control" placeholder="field Id" [(ngModel)]="fieldId"
+                            [ngModelOptions]="{ standalone: true }" required>
+                    </div>
+                    <div class="input_box">
+                        <input type="text" class="form-control" placeholder="field latitude" [(ngModel)]="latitude"
+                            [ngModelOptions]="{ standalone: true }" required>
+                    </div>
+                    <div class="input_box">
+                        <input type="text" class="form-control" placeholder="field longitude" [(ngModel)]="longitude"
+                            [ngModelOptions]="{ standalone: true }" required>
+                    </div>
+                </div>
+
+                <div class="input_row">
+                    <div class="input_box">
+                        <input type="text" class="form-control" placeholder="standard" [(ngModel)]="standard"
+                            [ngModelOptions]="{ standalone: true }" required>
+                    </div>
+                    <div class="input_box">
+                        <input type="text" class="form-control" placeholder="soil type" [(ngModel)]="soilType"
+                            [ngModelOptions]="{ standalone: true }" required>
+                    </div>
+                    <div class="input_box">
+                        <input type="text" class="form-control" placeholder="crop used" [(ngModel)]="cropType"
+                            [ngModelOptions]="{ standalone: true }" required>
+                    </div>
+                </div>
+
+                <div class="input_row">
+                    <div class="input_box">
+                        <input type="text" class="form-control" placeholder="extend taken" [(ngModel)]="extend"
+                            [ngModelOptions]="{ standalone: true }" required>
+                    </div>
+                    <div class="input_box">
+                        <input type="text" class="form-control" placeholder="manure type" [(ngModel)]="manure"
+                            [ngModelOptions]="{ standalone: true }" required>
+                    </div>
+                    <div class="input_box">
+                        <input type="text" class="form-control" [(ngModel)]="prevCrop" placeholder="previous crop"
+                            [ngModelOptions]="{ standalone: true }" required>
+                    </div>
+                </div>
+
+                <div class="input_row">
+                    <div class="input_box">
+                        <input type="text" class="form-control" placeholder="protection methods"
+                            [(ngModel)]="protection" [ngModelOptions]="{ standalone: true }" required>
+                    </div>
+                    <div class="input_box">
+                        <input type="text" class="form-control" [(ngModel)]="measures"
+                            placeholder="measures taken to grow" [ngModelOptions]="{ standalone: true }" required>
+                    </div>
+                </div>
+                <div class="input_row">
+                    <div class="input_box">
+                        <input type="text" class="form-control" [(ngModel)]="seedSource" placeholder="seed source"
+                            [ngModelOptions]="{ standalone: true }" required>
+                    </div>
+                </div>
+                <div class="input_row">
+                    <div class="input_box">
+                        <div class="row main">
+                            <div class="col main1">
+                                <div class="flex-container">
+                                    <h6 class="inline-heading">Identification document</h6>
+                                    <input type="file" id="pdfFile" name="pdfFile" accept=".pdf"
+                                        (change)=" onFileSelected($event)" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn btn-success">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

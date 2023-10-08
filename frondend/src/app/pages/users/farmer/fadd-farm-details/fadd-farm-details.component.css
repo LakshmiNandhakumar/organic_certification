@@ -1,0 +1,139 @@
+.fill{
+   background-color: #013220;
+   min-height: 100vh;
+}
+.fill::before{
+    content: '';
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    background: rgb(0,0,0,0.5);
+    z-index: 1;
+}
+
+.form_container{
+   position:absolute;
+   max-width: 540px;
+   width: 100%;
+   top:50%;
+   left:50%;
+   transform: translate(-50%, -50%);
+   z-index:101;
+   background-color: #fff;
+   border-radius: 12px;
+   padding:25px;
+   box-shadow: rgb(0,0,0,0.1);
+}
+
+.form_container h2{
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+   
+}
+
+
+.input_row {
+    display: flex;
+    justify-content: space-between;
+    gap:30px;
+  }
+.input_box{
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+}
+
+
+.input_box input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline:none;
+    color: #333;
+    transition: all 0.2s ease;
+    padding: 0 30px;
+    border-bottom: 1.5px solid #aaaaaa;
+    cursor: pointer;
+}
+
+.input_box input:focus{
+    border-color: green;
+}
+
+.input_box textarea{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline:none;
+    color:#333;
+    transition: all 0.2s ease;
+    padding: 0 30px;
+    border-bottom: 1.5px solid #aaaaaa;
+    cursor: pointer;
+}
+
+.input_box textarea:focus{
+    border-color: green;
+}
+
+.input_box i{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.input_box i.input{
+    left:0;
+    color: #707070;
+}
+
+.input_box input:focus ~ i.input,
+.input_box textarea:focus ~ i.input,
+.input_box input:focus ~ i.password{
+    color: black;
+}
+
+#crop{
+    padding: 0;
+}
+button{
+   margin-top: 25px;
+   width:100%;
+   border-radius: 20px;
+}
+.error-box{
+    background-color: lightgray;
+    color: red;
+    padding: 10px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 564px) {
+    .form_container{
+        position:absolute;
+        max-width: 280px;
+        width: 100%;
+        top:58%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        z-index:101;
+        background-color: #fff;
+        border-radius: 12px;
+        padding:25px;
+        box-shadow: rgb(0,0,0,0.1);
+     }
+     .input_box{
+        position: relative;
+        margin-top: 15px;
+        width: 100%;
+        height: 40px;
+    }
+   
+} 

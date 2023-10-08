@@ -1,0 +1,26 @@
+ <div class="container">
+          <div class="two-columns">
+           
+            <div class="left-column">
+              <div class="farm-details">
+                <h1 class="head-name">FARM DETAILS</h1>
+              
+                <ul class="field-details">
+                  <li><strong>Name:</strong> {{ fieldDetails.farmerId.username }}</li>
+                  <li><strong>Address:</strong> {{ fieldDetails.farmerId.address }}</li>
+                  <li><strong>Place:</strong> {{ fieldDetails.farmerId.place }}</li>
+                  </ul>
+                  <ul class="field-details">
+                  <li><strong>FieldId:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>{{fieldDetails.fieldDetails.fieldId}}</li>
+                  <li><strong>Geolocations:</strong>{{ fieldDetails.fieldDetails.latitude }},{{ fieldDetails.fieldDetails.longitude }}</li>
+                  <li><strong>Crop Used:&nbsp;&nbsp;&nbsp;</strong>{{ fieldDetails.fieldDetails.cropType }}</li>
+                  <li><strong>Certified:&nbsp;&nbsp;&nbsp;</strong>{{ fieldDetails.fieldDetails.certified }}</li>
+                </ul>
+              </div>
+            </div>
+            <div class="right-column">
+              <div id="map" style="height: 360px; width: 100%;"></div>
+            </div>
+          </div>
+        </div>
+        

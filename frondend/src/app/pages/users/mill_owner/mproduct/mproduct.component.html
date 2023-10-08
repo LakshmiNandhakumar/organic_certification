@@ -1,0 +1,57 @@
+<div class="hero_area">
+  <header class="header_section">
+    <nav class="navbar navbar-expand-lg custom_nav-container">
+      <div class="custom_menu-btn">
+        <button onclick="openNav()">
+          <span class="s-1"> </span>
+          <span class="s-2"> </span>
+          <span class="s-3"> </span>
+        </button>
+      </div>
+      <div id="myNav" class="overlay">
+        <div class="menu_btn-style ">
+          <button onclick="closeNav()">
+            <span class="s-1"> </span>
+            <span class="s-2"> </span>
+            <span class="s-3"> </span>
+          </button>
+        </div>
+        <div class="overlay-content">
+          <a class="active" href="mproduct">
+            orders
+          </a>
+        </div>
+      </div>
+      <a class="navbar-brand" href="mproduct">
+        <span>
+          GreenLife
+        </span>
+      </a>
+      <div class="user_option"><br>
+        <a href="/mprofile">
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
+<div class="profile">
+  <div class="row mb-4">
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr class="table-info">
+        <th>Rice Type</th>
+        <th>Quantity</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let products of productDetails">
+        <td>{{ products.productDetails.riceType }}</td>
+        <td>{{ products.productDetails.quantity }}</td>
+        <td><button class="btn btn-outline-success bg-success text-white"
+            (click)="viewProductDetails(products.fieldDetails.fieldId)">
+            View more</button></td>
+    </tbody>
+  </table>
+</div>

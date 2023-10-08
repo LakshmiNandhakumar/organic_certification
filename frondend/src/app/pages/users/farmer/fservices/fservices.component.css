@@ -1,0 +1,53 @@
+.choosesection {
+  position: relative;
+}
+.choosesection:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../../../../assets/images/field1.jpg);
+  background-size: cover;
+  -webkit-clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 90%);
+          clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 90%);
+  z-index: -1;
+}
+h2{
+  font-size: 30px;
+  color: white;
+}
+  
+
+span{
+  font-size: 30px;
+  color:yellow;
+}
+.main{
+  margin-top: 30px;
+}
+ 
+.box{
+  background-color: #013220;
+  padding: 25px;
+}
+.img-box{
+  width: 90%;
+  padding: 35px;
+}
+.detail-box{
+  padding-left: 40px;
+  color: #fff;
+}
+
+input{
+  width: 190%;
+  
+}
+section{
+  width: 100%;
+}
+
+
+

@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="two-columns">
+    <div class="left-column">
+      <div class="farm-details">
+        <h1 class="head-name">FARM DETAILS</h1>
+        <ul class="field-details">
+          <li><strong>Name:</strong> {{ fieldDetails.farmerId.username }}</li>
+          <li><strong>Address:</strong> {{ fieldDetails.farmerId.address }}</li>
+          <li><strong>Place:</strong> {{ fieldDetails.farmerId.place }}</li>
+        </ul>
+        <ul class="field-details">
+          <li><strong>FieldId:</strong> {{ fieldDetails.applicationDetails.fieldId }}</li>
+          <li><strong>Geolocations:</strong> {{ fieldDetails.applicationDetails.latitude }}, {{
+            fieldDetails.applicationDetails.longitude }}</li>
+          <li><strong>Crop Used:</strong> {{ fieldDetails.applicationDetails.cropType }}</li>
+        </ul>
+        <button [routerLink]="['/faddProductDetails',fieldDetails.applicationDetails.fieldId ]"
+          class="btn btn-outline-primary bg-success text-white">
+          Add Product Details
+        </button>
+      </div>
+    </div>
+    <div class="right-column">
+      <div id="map" style="height: 350px; width: 100%;"></div>
+    </div>
+  </div>
+</div>

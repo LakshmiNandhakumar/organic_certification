@@ -1,0 +1,54 @@
+
+body{
+   background-color: 013220;
+    min-height: 100vh;
+    padding: 50px;
+   
+  }
+
+ 
+  .product-details {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 20px; 
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 60%;
+  }
+  .product-images {
+  
+    margin-right: -60px; 
+    border-radius: 10px; 
+    margin-top: 5px;
+  }
+
+  h2{
+    font-size: 28px;
+    font-weight: bold;
+   
+  }
+ 
+form{
+  margin-top: 10px;
+}
+  .form-group{
+margin-top: 5px;
+
+font-weight: bold;
+  }
+
+  button{
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 20px;
+  }
+  .error-box{
+    background-color: lightslategray;
+    color: red;
+    padding: 10px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+
+ 
+  
+ 

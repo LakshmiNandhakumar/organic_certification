@@ -1,0 +1,86 @@
+<div class="hero_area">
+  <header class="header_section">
+    <nav class="navbar navbar-expand-lg custom_nav-container">
+      <div class="custom_menu-btn">
+        <button onclick="openNav()">
+          <span class="s-1"> </span>
+          <span class="s-2"> </span>
+          <span class="s-3"> </span>
+        </button>
+      </div>
+      <div id="myNav" class="overlay">
+        <div class="menu_btn-style ">
+          <button onclick="closeNav()">
+            <span class="s-1"> </span>
+            <span class="s-2"> </span>
+            <span class="s-3"> </span>
+          </button>
+        </div>
+        <div class="overlay-content">
+          <a class="active" href="viewapplication">
+            Applications
+          </a>
+        </div>
+      </div>
+      <a class="navbar-brand" href="viewapplication">
+        <span>
+          GreenLife
+        </span>
+      </a>
+      <div class="user_option"><br>
+        <a href="/inspectorprofile">
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <div class="profile">
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search application here" [(ngModel)]="searchTerm"
+            (input)="applySearch()">
+          <div class="input-group-append ms-1">
+            <button class="btn btn-secondary" (click)="clearSearch()">Clear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Application ID</th>
+          <th scope="col">Field Id</th>
+          <th scope="col">Farmer Name</th>
+          <th scope="col">Status</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let application of paginatedApplications">
+          <td>{{ application._id }}</td>
+          <td>{{ application.applicationDetails.fieldId }}</td>
+          <td>{{ application.farmerId.username }}</td>
+          <td>{{ application.applicationStatus }}</td>
+
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="viewApplicationDetails(application._id)">View
+              Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+      <nav>
+        <ul class="pagination">
+          <li class="page-item" [class.disabled]="currentPage === 1">
+            <button class="page-link" (click)="previousPage()">Previous</button>
+          </li>
+          <li class="page-item" [class.disabled]="currentPage === totalPages">
+            <button class="page-link" (click)="nextPage()">Next</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

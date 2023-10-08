@@ -1,0 +1,48 @@
+
+<body>
+    
+  
+   
+    <div class="container product-details">
+      <div class="row">
+       
+        <div class="col-md-6 product-images">
+        
+          <img src="../../../../../assets/images/product.jpg" alt="Product Image 1">
+          <img src="../../../../../assets/images/product1.jpg" alt="Product Image 2">
+      
+        </div>
+  
+        
+        <div class="col-md-6 product-form">
+          <h2>ADD MILLING DETAILS</h2>
+          <form [formGroup]="qrCodeForm" (ngSubmit)="generateQRCodes()">
+            
+            <div class="form-group">
+              <label for="millName">Mill name</label>
+              <input type="text" class="form-control " formControlName="millName" >
+            </div>
+            <div class="form-group">
+              <label for="millType">Type of Milling</label>
+              <input type="text" class="form-control" formControlName="millType">
+            </div>
+            <div class="form-group">
+              <label for="grading">Grading</label>
+              <input type="text" class="form-control" formControlName="grading" >
+            </div>
+            <div class="form-group">
+                <label for="numberOfBags">No.of bags</label>
+                <input type="text" class="form-control" formControlName="numberOfBags" >
+              </div>
+              <div class="form-group">
+                <label for="bagType">Bag Type</label>
+                <input type="text" class="form-control" formControlName="bagType" >
+              </div>
+            <button type="submit" class="btn btn-primary">Add Details</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+  </body> 
+ 

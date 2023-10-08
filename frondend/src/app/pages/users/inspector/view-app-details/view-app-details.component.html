@@ -1,0 +1,62 @@
+<body>
+  <div class="container product-details">
+    <div class="row">
+
+      <div class="col-md-6 product-images">
+        <img src="../../../../../assets/images/apply.jpg" alt="Product Image 1">
+        <img src="../../../../../assets/images/farm.jpg" alt="Product Image 2">
+      </div>
+
+      <div class="col-md-6 product-form">
+        <form *ngIf="application">
+          <div class="form-group">
+            <p class="card-title ">Field id : {{ application.applicationDetails.fieldId }}</p>
+            <p class="card-title ">Farmer name : {{ application.farmerId.username }}</p>
+            <p class="card-title ">Farmer address : {{ application.farmerId.address }}</p>
+            <p class="card-title ">Farmer place : {{application.farmerId.place }}</p>
+            <p class="card-title ">Geolocations : {{ application.applicationDetails.latitude}},{{ application.applicationDetails.longitude}}&nbsp;&nbsp;&nbsp;
+              <a href="/map/{{application._id}}">See location here!</a></p>
+            <p class="card-title ">Standard : {{ application.applicationDetails.standard}}</p>
+            <p class="card-title ">crop used : {{application.applicationDetails.cropType}}</p>
+            <p class="card-title ">Duration Taken :{{application.applicationDetails.extend}}</p>
+            <p class="card-title ">Manure Used : {{ application.applicationDetails.manure}}</p>
+            <p class="card-title ">Protection methods Used : {{ application.applicationDetails.protection}}</p>
+            <p class="card-title ">Previous crop used : {{ application.applicationDetails.prevCrop}}</p>
+            <p class="card-title ">Measures used for previous crop: {{ application.applicationDetails.measures}}</p>
+            <p class="card-title ">Source of seed: {{ application.applicationDetails.seedSource}}</p>
+            <div *ngIf="identificationFileUrl">
+              Uploaded File: <a [href]="identificationFileUrl" target="_blank" rel="noopener noreferrer">{{ application.applicationDetails.fileUrl}}</a>
+            </div>
+          </div> 
+        </form>
+      </div>
+    </div>
+    <div class="button-group">
+      <button type="button" class="btn btn-primary ms-2" (click)="acceptApplication()">Accept</button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-left: 10px;">
+        Reject
+      </button> 
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Rejection Reason</h5>
+              <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <input type="text" class="form-control" [(ngModel)]="rejectReason" placeholder="Enter rejection reason">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal"
+                (click)="rejectApplication()">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+      
+      
+    </div>
+  </div>
+</body>

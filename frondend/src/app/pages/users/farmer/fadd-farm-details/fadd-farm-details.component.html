@@ -1,0 +1,61 @@
+<div class="fill">
+    <div class="form_container">
+      <div class="field_details_form">
+        <form (ngSubmit) = "onSubmit()" >
+          <h2>ADD FARM DETAILS</h2>
+          <div class="error-box" *ngIf="validationMessage">
+            <div class="error-message">
+              {{ validationMessage }}
+            </div>
+          </div>
+          <div class="input_row">
+            <div class="input_box">
+                <input type="text" value={{username}} disabled="true"
+                  required>
+                  <i class="fa fa-user input"></i>
+              </div>
+              <div class="input_box">
+                <input type="text" value={{address}} disabled="true"
+                  required>
+                  <i class="fa fa-address-book-o input"></i>
+              </div>
+            </div>
+          
+          <div class="input_box">
+            <input type="text" value={{place}} disabled="true"
+              required>
+              <i class="fa fa-map-marker input"></i>
+          </div>
+          <div class="input_box">
+            <input type="text" value={{searchInput}} >
+           
+              <i class="fa fa-id-card-o input"></i>
+          </div>
+          <div class="input_row">
+            <div class="input_box">
+                <input type="text" placeholder="Enter field latitude" [(ngModel)]="latitude" [ngModelOptions]="{ standalone: true }"
+               required>
+                  <i class="fa fa-map-marker input"></i>
+              </div>
+              <div class="input_box">
+                <input type="text" placeholder="Enter field longitude" [(ngModel)]="longitude" [ngModelOptions]="{ standalone: true }"
+                  required>
+                  <i class="fa fa-map-marker input"></i>
+              </div>
+          </div>
+          <div class="input_box">
+            <input type="text" id="crop" placeholder="What crop used in your field?" [(ngModel)]="cropType" [ngModelOptions]="{ standalone: true }"
+              required>
+          </div>
+         
+          <div>
+            <button type="submit" class="btn btn-outline-primary bg-primary text-white">
+              ADD
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  

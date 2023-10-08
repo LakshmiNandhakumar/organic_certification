@@ -1,0 +1,98 @@
+<div class="hero_area">
+  <header class="header_section">
+    <nav class="navbar navbar-expand-lg custom_nav-container">
+      <div class="custom_menu-btn">
+        <button onclick="openNav()">
+          <span class="s-1"> </span>
+          <span class="s-2"> </span>
+          <span class="s-3"> </span>
+        </button>
+      </div>
+      <div id="myNav" class="overlay">
+        <div class="menu_btn-style ">
+          <button onclick="closeNav()">
+            <span class="s-1"> </span>
+            <span class="s-2"> </span>
+            <span class="s-3"> </span>
+          </button>
+        </div>
+        <div class="overlay-content">
+          <a class="active" href="tqrcodes">
+            Scanner
+          </a>
+        </div>
+      </div>
+      <a class="navbar-brand" href="tqrcodes">
+        <span>
+          GreenLife
+        </span>
+      </a>
+      <div class="user_option"><br>
+        <a href="/tprofile">
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-body">
+          <div *ngIf="scannedQRCodeContent === null">
+            <div class="text-center">
+              <h5 class="card-title">Please Scan Here</h5>
+              <p class="lead">Scanned QR Code Content: {{ scannedQRCodeContent }}</p>
+              <button class="btn btn-primary me-2" (click)="startScanning()" [disabled]="isScannerDisabled">Start Scanning</button>
+              <button class="btn btn-danger" (click)="stopScanning()" [disabled]="!isScannerDisabled">Stop Scanning</button>
+            </div>
+            <div *ngIf="!isScannerDisabled && scannedQRCodeContent === null" class="text-center mt-4">
+              <zxing-scanner [torch]="true" (scanSuccess)="onScanSuccess($event)"></zxing-scanner>
+            </div>
+          </div>
+          <div *ngIf="scannedQRCodeContent" class="mt-4">
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" (click)="activeTab = 'field-details'" role="tab" [class.active]="activeTab === 'field-details'">Field Details</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" (click)="activeTab = 'product-details'" role="tab" [class.active]="activeTab === 'product-details'">Product Details</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" (click)="activeTab = 'milling-details'" role="tab" [class.active]="activeTab === 'milling-details'">Milling Details</a>
+              </li>
+            </ul>
+            <div *ngIf="activeTab === 'field-details'" class="mt-3">
+              <ul class="list-group">
+                <li class="list-group-item"><strong>Field Id:</strong> {{ productDetails.fieldDetails.fieldId }}</li>
+                <li class="list-group-item"><strong>Geolocations:</strong> {{ productDetails.fieldDetails.latitude }},{{ productDetails.fieldDetails.longitude }}</li>
+                <li class="list-group-item"><strong>Crop type:</strong> {{ productDetails.fieldDetails.cropType }}</li>
+                <li class="list-group-item"><strong>Certified:</strong> {{ productDetails.fieldDetails.certified }}</li>
+              </ul>
+            </div>
+            <div *ngIf="activeTab === 'product-details'" class="mt-3">
+              <ul class="list-group">
+                <li class="list-group-item"><strong>Rice Type:</strong> {{ productDetails.productDetails.riceType }}</li>
+                <li class="list-group-item"><strong>Duration Taken:</strong> {{ productDetails.productDetails.duration }}</li>
+                <li class="list-group-item"><strong>Quantity:</strong> {{ productDetails.productDetails.quantity }}</li>
+              </ul>
+            </div>
+            <div *ngIf="activeTab === 'milling-details'" class="mt-3">
+              <ul class="list-group">
+                <li class="list-group-item"><strong>Mill Name:</strong> {{ productDetails.millingDetails.millName }}</li>
+                <li class="list-group-item"><strong>Mill Type:</strong> {{ productDetails.millingDetails.millType }}</li>
+                <li class="list-group-item"><strong>Grading:</strong> {{ productDetails.millingDetails.grading }}</li>
+                <li class="list-group-item"><strong>Number of Bags:</strong> {{ productDetails.millingDetails.numberOfBags }}</li>
+                <li class="list-group-item"><strong>Quantity Per Bag:</strong> {{ productDetails.millingDetails.quantityPerBag }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <button *ngIf="scannedQRCodeContent" class="btn btn-primary" routerLink="/tadd/{{ scannedQRCodeContent }}">Add Transport Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

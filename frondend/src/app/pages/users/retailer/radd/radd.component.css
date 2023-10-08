@@ -1,0 +1,50 @@
+.container {
+ 
+  padding: 30px;
+}
+.card {
+  border-radius: 0;
+}
+
+.card-header {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.nav-tabs {
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  color: #333;
+}
+
+.nav-link.active {
+  color: #007BFF;
+  font-weight: bold;
+  border-bottom: 2px solid #007BFF;
+}
+
+.list-group {
+  border: none;
+}
+
+.list-group-item {
+  border: none;
+}
+
+/* Custom CSS to align list items to the left */
+.list-group-left-aligned {
+  text-align: left;
+}
+
+.card-footer {
+  background-color: #f8f9fa;
+  border-top: none;
+  text-align: center;
+}

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+.profile {
+    background-color: #f5f5f5;
+    padding: 30px;
+    width:100%;
+  }
+  
+  .profile h2 {
+    color: #333;
+  }
+  
+  .profile input[type="text"] {
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .profile .table {
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  .profile .table th {
+    
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .profile .btn-secondary {
+    margin-top: 30px;
+    background-color: #ccc;
+    color: #333;
+  }
+
+.header{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 900;
+}
+
+table{
+    margin-top: 30px;
+}
+
+
+
+
+
+

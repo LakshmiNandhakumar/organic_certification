@@ -1,0 +1,91 @@
+<section class="contact_section layout_padding section_pl ">
+  <div class="container py_mobile_45">
+    <div class="heading_container">
+      <h2>Sign <span>Up</span></h2>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form_container">
+          <form
+            (ngSubmit)="register(username, address, place, email, password, userType,storeName,buildingname,buildingnum)">
+            <div>
+              <input type="text" class="form-control" placeholder="Enter your name" [(ngModel)]="username"
+                [ngModelOptions]="{ standalone: true }" required>
+            </div>
+            <div class="row">
+              <div>
+                <input name="text" class="form-control" placeholder="Enter your address" [(ngModel)]="address"
+                  [ngModelOptions]="{ standalone: true }" required>
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Enter your place" [(ngModel)]="place"
+                  [ngModelOptions]="{ standalone: true }" required>
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" [(ngModel)]="email"
+                  [ngModelOptions]="{ standalone: true }" required>
+              </div>
+              <div>
+                <input type="password" class="form-control" id="password" placeholder="Enter a strong password" [(ngModel)]="password"
+                  [ngModelOptions]="{ standalone: true }" required>
+              </div>
+            </div>
+
+            <div>
+              <select [(ngModel)]="userType" class="form-select" [ngModelOptions]="{ standalone: true }" required>
+                <option value="select">Select-</option>
+                <option value="farmer">Farmer</option>
+                <option value="inspector">Inspector</option>
+                <option value="certifier">Certifier</option>
+                <option value="mill_owner">Mill Owner</option>
+                <option value="transporting_company">Transporting Company</option>
+                <option value="retailer">Retailer</option>
+                <option value="customer">Customer</option>
+              </select>
+            </div><br>
+
+            <div *ngIf="userType === 'retailer'">
+              <div class="row">
+                <div>
+                  <input type="text" class="form-control" placeholder="Enter your store name" [(ngModel)]="storeName"
+                    [ngModelOptions]="{ standalone: true }" required>
+                </div>
+              <div>
+                <input type="text" placeholder="Enter your building license number" [(ngModel)]="buildingnum"
+                  [ngModelOptions]="{ standalone: true }" required>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="userType === 'mill_owner' || userType === 'transporting_company'">
+              <div class="row">
+                <div>
+                  <input type="text" class="form-control" placeholder="Enter your building name"
+                    [(ngModel)]="buildingname" [ngModelOptions]="{ standalone: true }" required>
+                </div>
+                <div>
+                  <input type="text" placeholder="Enter your building license number" [(ngModel)]="buildingnum"
+                    [ngModelOptions]="{ standalone: true }" required>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex ">
+              <button>
+                SIGN UP
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="map_container">
+          <div class="map">
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

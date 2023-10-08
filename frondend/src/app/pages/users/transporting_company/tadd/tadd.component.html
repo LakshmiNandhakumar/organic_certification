@@ -1,0 +1,61 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Transporting Details</h4>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="addDetails()" #detailsForm="ngForm" class="needs-validation" novalidate>
+           
+              <div class="mb-3">
+                <label for="companyId" class="form-label">Transporting Company Id</label>
+                <input type="text" class="form-control" id="companyId" name="companyId" [(ngModel)]="companyId" required>
+                <div class="invalid-feedback">
+                  Please provide a valid Company ID.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="companyName" class="form-label">Transporting Company Name</label>
+                <input type="text" class="form-control" id="companyName" name="companyName" [(ngModel)]="companyName" required>
+                <div class="invalid-feedback">
+                  Please provide a valid Company Name.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="storeName" class="form-label">Store Name</label>
+                <div class="input-group">
+                  <select class="form-select" id="storeName" name="storeName" [(ngModel)]="storeName" required>
+                    <option value="" disabled>Select a Store Name</option>
+                    <option *ngFor="let name of storeNames" [value]="name">{{ name }}</option>
+                  </select>
+                  <div class="input-group-append ms-1">
+                    <button class="btn btn-outline-secondary" type="button" (click)="clearStoreNameSelection()">Clear</button>
+                  </div>
+                </div>
+                <div class="invalid-feedback">
+                  Please select a Store Name.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="from" class="form-label">From</label>
+                <input type="text" class="form-control" id="from" name="from" [(ngModel)]="from" required>
+                <div class="invalid-feedback">
+                  Please provide a valid From date.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="to" class="form-label">To</label>
+                <input type="text" class="form-control" id="to" name="to" [(ngModel)]="to" required>
+                <div class="invalid-feedback">
+                  Please provide a valid To date.
+                </div>
+              </div>
+
+            <button type="submit" class="btn btn-primary" [disabled]="!detailsForm.valid">Add Details</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

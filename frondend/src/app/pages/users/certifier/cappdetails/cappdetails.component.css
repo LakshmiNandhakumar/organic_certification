@@ -1,0 +1,48 @@
+
+body{
+   
+  min-height: 100vh;
+  margin-top: 20px;
+}
+
+
+.product-details {
+  border-radius: 10px; 
+  margin-top: 10px; 
+  padding: 20px;
+  width: 60%;
+  background-color:lavender;
+}
+.product-images {
+  margin-right: -1px; 
+  border-radius: 10px; 
+  margin-top: 5px;
+}
+.product-images  img{
+  height: 250px;
+}
+
+h2{
+  font-size: 28px;
+  font-weight: bold;
+}
+
+form{
+margin-top: 20px;
+}
+p{
+  margin-top: 8px;
+}
+.form-group{
+margin-top: 3px;
+
+font-weight: bold;
+font-size: 14px;
+
+}
+.button-group{
+  
+  border-radius: 20px;
+  margin-left: 50%;
+  
+}
